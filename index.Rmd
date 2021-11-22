@@ -2,7 +2,9 @@
 title: "index"
 author: "Yan Remes"
 date: "11/13/2021"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, warning=FALSE, include=FALSE}
@@ -14,7 +16,7 @@ source("./analysis.R")
 
 ## Introduction + Summary Information
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
 df_trends <- read.csv("incarceration_trends.csv")
 df_jurisdiction <- read.csv("incarceration_trends_jail_jurisdiction.csv")
 
@@ -47,7 +49,7 @@ It shows that the population of black people significantly decreased from 2000 t
 ## Trends Over Time Chart
 
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
 trends_over_time
 ```
 Sorting data by the most populate states in 2018 where black people ages from 15 to 64 live I was 
@@ -62,7 +64,7 @@ This trend is important to consider to see the future potential changes in black
 ## Variable comparison chart
 
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
 variable_comparison
 ```
 I used this chart to see the difference in population over time for races in the most populate states in 2018.
