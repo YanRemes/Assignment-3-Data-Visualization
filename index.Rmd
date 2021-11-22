@@ -1,0 +1,89 @@
+---
+title: "index"
+author: "Yan Remes"
+date: "11/13/2021"
+output: html_document
+---
+
+```{r setup, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+knitr::opts_chunk$set(echo = TRUE)
+source("./analysis.R")
+```
+
+## Introduction + Summary Information
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+df_trends <- read.csv("incarceration_trends.csv")
+df_jurisdiction <- read.csv("incarceration_trends_jail_jurisdiction.csv")
+
+recent_avg_black_jail_pop
+recent_avg_white_jail_pop
+county_with_highest_black_pop_15to64
+county_with_highest_white_pop_15to64
+change_In_black_pop
+```
+df_trends holds data from the Death in Custody Reporting Program that is used to 
+find the prison population and the prison admission. Each data takes in yearly estimates. 
+Also, population and admission splits into gender and race. In addition
+the population splits into age categories
+df_jurisdiction holds data from the Annual Survey of Jails and Census of Jails.
+Each data takes in yearly estimates. Also, population and admission splits into gender and race. 
+
+recent_avg_black_jail_pop shows the average value of black jail population across all the counties for 2018 is 91.81734
+recent_avg_white_jail_pop shows the average value of black jail population across all the counties for 2018 is 127.2046
+It shows that in 2018 the average number of whites in the jail is higher than the number of blacks in the jail
+by 35.38726
+county_with_highest_black_pop_15to64 shows the county with the highest population of black people between the age of 
+15 and 64 that is New York County
+county_with_highest_white_pop_15to64 shows the county with the highest population of white people between the age of 
+15 and 64 that is Hoonah-Angoon Census Area
+This analysis helps to understand where what are the major counties where 2 races live
+change_In_black_pop shows change of black people people between the age of 15 and 64 in New York County starting from 2000 and until 2018.
+The result is -78040.
+It shows that the population of black people significantly decreased from 2000 to 2018
+
+## Trends Over Time Chart
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+trends_over_time
+```
+Sorting data by the most populate states in 2018 where black people ages from 15 to 64 live I was 
+interested to see the patterns how the population changes over time. Alaska shows stable results in 
+the population of black people from 1990 to 2018.
+There is significant increase in black population in Arizona from 2005 until 2018. The increase is 
+approximately from 125000 to 250000. Looking at Arkansas we can see a stable moderate increase in 
+population from 230000 to 270000. Alabama shows a significant increase starting from 1990 and until 2018. 
+The population increased from 600000 to 850000. California also shows significant increase from 1350000 to 1700000. 
+This trend is important to consider to see the future potential changes in black population
+
+## Variable comparison chart
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+variable_comparison
+```
+I used this chart to see the difference in population over time for races in the most populate states in 2018.
+Alaska shows stable results from 1990 to 2018 for both race. Alabama shows an increase in population
+of black people from 600000 to 850000, while there is a slight decrease in population of white people from 220000 to 200000.
+Arizona shows slight increase in black population but it is not very sufficient, white population shows a slight decrease
+but it is also not very sufficient. Arizona shows moderate increase in black population from 125000 to 250000, while
+white populate shows significant increase from 1500000 to 2000000 points. California shows an increase from 1350000 to 1700000,
+while white population drops from 12000000 to 10000000. This graph is important to consider for future changes in races
+and the possibility to compare both race populations.
+
+## Map
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+map
+```
+I included this graph to compare black jail incarceration rate across the United states. 
+The main purpose was to find what county has the
+highest number of black people that are in the jail. The result shows that 
+Los Angeles, California has the highest number of black people that are in the jail.
+It shows that the approximate number is between 5000 and 7500
+Another very high results show Miami Florida has around 2500 - 5000
+black colored people in the jail
